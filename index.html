@@ -2,13 +2,46 @@
 <html>
 <head>
 	<title>MyPag</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		//alert('Omg!' + x);
-		setTimeout( () => {
-		document.querySelector('#suaj').innerHTML = 'Me modificaron xDxdXd';}, 3000);
+		// setTimeout( () => {
+		//document.querySelector('#suaj').innerHTML = 'Me modificaron xDxdXd';}, 3000);
+
+		//setTimeout(() => { 
+		//	$('#suaj').html('by JaQbo');
+		//}, 1000);
+		$('#suaj');
+		var pollo = {
+			username: 'Yoc',
+			pass: 'selacome'
+		};
+		$.post('/mi_ruta', pollo, (data) => {
+			alert(data);
+		});
+
+		$.get('/weey', (data) => {
+			$('#suaj').html(data);
+	    });
 	</script>
 </head>
 <body>
-	<h1 id = 'esaWea'> No me han modificado :( </h1>
+	<h1 id = 'suaj'> No me han modificado :( </h1>
+
+	<form id="ajaxform" >
+		Usuario:
+		<input type="text" name="username">
+		<br/>
+		Pass:
+		<input type="text" name="pass">
+		<button type="submit">LogIn</button>
+	</form>
+
+	<script type="text/javascript">
+
+	</script>
 </body>
 </html>
